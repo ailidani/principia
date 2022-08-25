@@ -17,19 +17,20 @@ e_j(n) &= d_j(n) - y_j(n)\\\
 \end{aligned}
 $$
 
-The instantaneous error energy of neuron $j$ is defined by $\mathcal{E}_j(n) = e_j^2(n)/2$.
+The instantaneous error energy of neuron $j$ is defined by $E_j(n) = e_j^2(n)/2$.
 
-Total instantaneous error energy of the whole network $\mathcal{E}(n) = \sum_{j \in C} \mathcal{E}_j(n)$ where $C$ includes all neurons in output layer.
+Total instantaneous error energy of the whole network $E(n) = \sum_{j \in C} E_j(n)$ where $C$ includes all neurons in output layer.
 
 With $N$ training samples, the error energy averaged over the training sample or empirical risk is
 
 $$
 \begin{aligned}
-\mathcal{E}_{av}(N) &= \frac{1}{N} \sum_{n=1}^{N} \mathcal{E}(n)\\\
+E_{av}(N) &= \frac{1}{N} \sum_{n=1}^{N} \mathcal{E}(n)\\\
                     &= \frac{1}{2} \sum_{j \in C} e_j^2(n)
 \end{aligned}
 $$
 
+---
 
 $$y(\mathbf{x, w}) = \sigma(\sum_{i=1}^{D}w_{ji}x_i + w_{j0})$$
 
