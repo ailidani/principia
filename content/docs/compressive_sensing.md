@@ -1,7 +1,7 @@
 ---
 title: "Compressive Sensing"
 date: 2016-05-27
-draft: true
+draft: false
 ---
 
 ## Introduction
