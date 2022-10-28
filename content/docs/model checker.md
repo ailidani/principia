@@ -18,16 +18,75 @@ an action may have no effect, i.e. the next state is equal to previous state.
 
 {{< mermaid >}}
 %%{init: {'theme':'dark'}}%%
-flowchart LR;
-s0 --a0--> s1
-s0 --a1--> s2
-s1 --a0--> s3
-s1 --a1--> s4
-s2 --a0--> s5
-s2 --a1--> s6
+stateDiagram-v2
+s0 --> s1 : a0
+s0 --> s2 : a1
+s1 --> s3 : a0
+s1 --> s4 : a1
+s2 --> s5 : a0
+s2 --> s6 : a1
 {{< /mermaid >}}
 
+## CTL
+State Formula $\Phi$ and Path Formula $\phi$
+$$\Phi := true | (\neg \Phi) | (\Phi_1 \land \Phi_2) | (\Phi_1 \lor \Phi_2) | (\Phi \implies \Phi) | (\Phi \iff \Phi) | \exists \phi | \forall \phi$$
+$$\phi := N\Phi | (\Phi_1 U \Phi_2) | \square \Phi | \diamond \Phi$$
 
+
+## CTL*
+
+$$\Phi := true | (\neg \Phi) | (\Phi_1 \land \Phi_2) | (\Phi_1 \lor \Phi_2) | (\Phi \implies \Phi) | (\Phi \iff \Phi) | \exists \phi | \forall \phi$$
+$$\phi := \Phi | (\neg\phi) | (\phi_1 \land \phi_2) | (\phi_1 \lor \phi_2) | (\phi \implies \phi) | (\phi \iff \phi) | N\Phi | (\Phi_1 U \Phi_2) | \square \Phi | \diamond \Phi$$
+
+$\pi \models \Phi \iff s_0 \models \Phi$
+
+$s \models \neg \Phi \iff s \not\models \Phi$
+$\pi \models \neg \phi \iff \pi \not\models \phi$
+
+```go
+func Not(f Formula) Formula {
+    return func(s ...State) bool {
+        return !f(s...)
+    }
+}
+```
+
+
+$s \models \Phi_1 \implies \Phi_2 \iff s \not\models \Phi_1 \lor s \models \Phi_2$
+$\pi \models \phi_1 \implies \phi_2 \iff \pi \not\models \phi_1 \lor \pi \models \phi_2$
+
+```go
+func Imply(f, g Formula) Formula {
+    return func(s ...State) bool {
+        return !f(s...) || g(s...)
+    }
+}
+```
+
+$\pi \models \phi_1 U \phi_2 \iff \exists n \geq 0 : \pi[n] \models \phi_2 \land \forall 0 \leq k < n : \pi[k] \models \phi_1$
+
+```go
+func Until(f, g Formula) Formula {
+    return func(path ...State) bool {
+        n := -1
+        for i, s := range path {
+            if g(s) {
+                n = i
+                break
+            }
+        }
+        if n < 0 {
+            return false
+        }
+        for i := 0; i < n; i++ {
+            if !f(path[i]) {
+                return false
+            }
+        }
+        return true
+    }
+}
+```
 
 
 Model checker is a type of program
