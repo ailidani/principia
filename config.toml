@@ -4,6 +4,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Principia"
 theme = "hugo-book"
+googleAnalytics = "G-3P4X93VJZC"
 
 # configuration
 disablePathToLower = true
