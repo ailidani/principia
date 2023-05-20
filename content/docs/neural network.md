@@ -50,3 +50,29 @@ $$\delta^m_j = (\hat{y}-y) f'(a^m_j)$$
 
 *The hidden layer*
 $$\delta^k_j = f'(a^k_j) \sum_{l=1}^{r^{k+1}} w_{jl}^{k+1} \delta_{l}^{k+1}$$
+
+
+## Graph Neural Network
+
+Message Passing Neural Networks (MPNNs)
+
+Let $G=(V, E)$ be a graph, $N_u$ be the neighbourhood of node $u \in V$, $\mathbf{x_u}$ be features of node $u$, and $\mathbf{e_{uv}}$ be the feature of edge $(u, v) \in E$.
+MPNN layer can be expressed as follows
+
+$$\mathbf{h_u} = \phi(\mathbf{x_u}, \bigoplus_{u \in N_u} \psi(\mathbf{x_u}, \mathbf{x_v}, \mathbf{e_{uv}})),$$
+
+where $\phi$ and $\psi$ are differentiable functions (e.g. artificial neural networks),
+$\bigoplus$ is permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g. element-wise sum, mean, max).
+$\phi$ is update function,
+and $\psi$ is message function.
+
+{{< mermaid >}}
+%%{init: {'theme':'dark'}}%%
+graph RL;
+x0((x0))
+f((f))
+x1((x1))
+
+x0 -.-> f
+x1 -.-> f --> x0
+{{< /mermaid >}}
