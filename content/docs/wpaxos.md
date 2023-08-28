@@ -1,8 +1,6 @@
 ---
 title: "WPaxos"
 date: "2017-08-17"
-image: "wpaxos.png"
-type: "blog"
 draft: true
 tags: ["transaction"]
 ---

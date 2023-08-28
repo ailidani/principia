@@ -1,9 +1,7 @@
 ---
 title: "Paxos Reconfiguration"
 date: "2017-05-11"
-image: "paxos.png"
-type: "blog"
-draft: false
+draft: true
 tags: ["Paxos", "consensus"]
 ---
 

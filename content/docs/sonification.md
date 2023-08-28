@@ -1,9 +1,7 @@
 ---
 title: "What Paxos sounds like"
 date: "2016-09-05"
-image: "sonification.jpg"
-type: "blog"
-draft: false
+draft: true
 tags: ["paxos"]
 ---
 

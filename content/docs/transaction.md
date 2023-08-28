@@ -1,9 +1,7 @@
 ---
 title: "Distributed Transactions"
 date: "2017-08-13"
-image: "2pc.png"
-type: "blog"
-draft: false
+draft: true
 tags: ["transaction"]
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: "TLA+ wiki"
 date: "2015-11-25"
-image: "tla+.png"
-type: "blog"
 draft: false
 tags: ["tla+"]
 ---

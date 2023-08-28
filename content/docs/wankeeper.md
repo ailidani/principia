@@ -1,9 +1,7 @@
 ---
 title: "WanKeeper: Efficient Distributed Coordination at WAN-scale"
 date: "2017-06-17"
-image: "wankeeper.png"
-type: "blog"
-draft: false
+draft: true
 tags: ["wan", "consensus"]
 ---
 
