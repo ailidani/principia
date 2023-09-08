@@ -136,3 +136,34 @@ func Until(f, g Formula) Formula {
     }
 }
 ```
+
+{{< mermaid >}}
+%%{init: {'theme':'dark'}}%%
+classDiagram
+
+class State {
+    <<interface>>
+    String() string
+}
+
+class Actor {
+    ID() string
+    Address() string
+    GetMembers() []string
+    Send(any, string) error
+    Multicast(any, ...string) error
+    Receive() (*Message, error)
+}
+
+class Model {
+    init State
+    actions map[string]Action
+    xactions map[string]XAction
+    constraints map[string]StateConstraint
+    formulas map[string]Formula
+    graph *Graph
+    queue
+
+    ID() uint64
+}
+{{< /mermaid >}}
