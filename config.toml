@@ -15,19 +15,20 @@ enableEmoji = true
 [markup]
 [markup.goldmark.renderer]
   unsafe = true
+
 [markup.tableOfContents]
   startLevel = 1
 
 [menu]
 # [[menu.before]]
 [[menu.after]]
-  name = "Github"
-  url = "https://github.com/ailidani"
+  name = "Google Scholar"
+  url = "https://scholar.google.com/citations?user=D6PWsuwAAAAJ&hl=en"
   weight = 10
 
 [[menu.after]]
-  name = "Google Scholar"
-  url = "https://scholar.google.com/citations?user=D6PWsuwAAAAJ&hl=en"
+  name = "Github"
+  url = "https://github.com/ailidani"
   weight = 20
 
 [params]
