@@ -4,6 +4,8 @@ date: 2021-08-23
 draft: false
 ---
 
+# Model Checker in Go
+
 ## Temporal logic
 
 More than 2000 years ago, Greek philocersor Aristotle, as the first man ever systematically studied _logic_, has already raised concers about how time (futures in particular) plays a complex role in logical reasoning in his book "On Interpretation". Since then, very little was developed for millennia. Until 1947, a formalization of temporal functions was created by Polish mathematician Jerzy Los. Ever since 1950s, a lot of theoretical works has been developed in this area. Eventually, temporal logic has find its biggest application in computer science as formal verification, where it is used to describe the system requirements and a checker can verify against some model.
@@ -142,7 +144,7 @@ func Until(f, g Formula) Formula {
 classDiagram
 
 class State {
-    <<interface>>
+    << interface >>
     String() string
 }
 
