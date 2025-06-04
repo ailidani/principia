@@ -1,7 +1,7 @@
 ---
 title: "ABD Algorithm"
 date: 2021-08-23
-draft: true
+draft: false
 ---
 
 ## Write

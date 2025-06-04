@@ -1,7 +1,7 @@
 ---
 title: "Model Checker in Go"
 date: 2021-08-23
-draft: true
+draft: false
 ---
 
 ## Temporal logic

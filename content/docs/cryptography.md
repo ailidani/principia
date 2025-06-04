@@ -1,7 +1,7 @@
 ---
 title: "Cryptography"
 date: 2023-09-07
-draft: true
+draft: false
 ---
 
 # Shamir's Secret Sharing (SSS)

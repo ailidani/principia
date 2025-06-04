@@ -1,7 +1,7 @@
 ---
 title: "Neural Network"
 date: 2021-05-29
-draft: true
+draft: false
 ---
 
 ## Multilayer Perceptrons
