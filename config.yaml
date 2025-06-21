@@ -1,0 +1,52 @@
+# hugo server --minify --disableFastRender
+
+baseURL: "/"
+languageCode: "en-us"
+title: "Principia"
+theme: "github.com/alex-shpak/hugo-book"
+
+googleAnalytics: "G-3P4X93VJZC"
+
+services:
+  disqus:
+    shortname: ailidani.disqus.com
+
+# configuration
+disablePathToLower: true
+enableGitInfo: true
+enableEmoji: true
+
+module:
+  imports:
+    - path: "github.com/alex-shpak/hugo-book"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+
+menu:
+  # before: []
+  after:
+    - name: "Google Scholar"
+      url: "https://scholar.google.com/citations?user=D6PWsuwAAAAJ&hl=en"
+      weight: 10
+    - name: "Github"
+      url: "https://github.com/ailidani"
+      weight: 20
+
+params:
+  BookTheme: "auto"
+  BookToC: true
+  BookSection: "/"
+  BookRepo: "https://github.com/ailidani/principia"
+  BookCommitPath: "commit"
+  BookEditPath: "edit/master"
+  BookDateFormat: "January 2, 2006"
+  BookSearch: true
+  BookComments: true
+  BookPortableLinks: true
+  BookServiceWorker: true
+  BookTranslatedOnly: false

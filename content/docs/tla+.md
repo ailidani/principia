@@ -2,7 +2,7 @@
 title: "TLA+ wiki"
 date: "2015-11-25"
 draft: false
-tags: ["tla+"]
+# tags: ["tla+"]
 ---
 
 ### Modules
