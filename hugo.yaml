@@ -9,7 +9,7 @@ googleAnalytics: "G-3P4X93VJZC"
 
 services:
   disqus:
-    shortname: ailidani.disqus.com
+    shortname: ailidani
 
 # configuration
 disablePathToLower: true
