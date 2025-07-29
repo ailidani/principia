@@ -7,10 +7,6 @@ theme: "github.com/alex-shpak/hugo-book"
 
 googleAnalytics: "G-3P4X93VJZC"
 
-services:
-  disqus:
-    shortname: ailidani
-
 # configuration
 disablePathToLower: true
 enableGitInfo: true
