@@ -30,3 +30,50 @@ type BigNumber interface {
     big.Float | big.Rat | big.Int
 }
 ```
+
+In addition to the fundamental arithmetic operations ($+,-,\times,\div$), it is advantageous to enumerate a collection of standard functions that are broadly applicable to the generic `Number` type, including but not limited to `Sign`, `Abs`, `Exp`, `Sqrt`, `Sin`, `Cos`, and `Log`.
+```go
+func Sign[T Number](x T) T {
+	switch v := any(x).(type) {
+	case int:
+		if v > 0 {
+			return T(1)
+		} else if v < 0 {
+			return T(-1)
+		}
+		return T(0)
+
+	case float32:
+		if v > 0 {
+			return T(1)
+		} else if v < 0 {
+			return T(-1)
+		}
+		return T(0)
+
+	case float64:
+		if v > 0 {
+			return T(1)
+		} else if v < 0 {
+			return T(-1)
+		}
+		return T(0)
+
+	case complex64:
+		if v == 0 {
+			return T(0)
+		}
+		abs := float32(cmplx.Abs(complex128(v)))
+		return any(v / complex(abs, 0)).(T)
+
+	case complex128:
+		if v == 0 {
+			return T(0)
+		}
+		return any(v / complex(cmplx.Abs(v), 0)).(T)
+
+	default:
+		panic("unsupported type")
+	}
+}
+```
