@@ -91,13 +91,13 @@ $\alpha$ is exponential decay factor \[0, 1\].
 ## Adam (Adaptive Moment Estimation)
 
 $$
-\begin{align*}
+\begin{aligned}
 m &= \beta_1 m + (1 - \beta_1) \nabla L \\\
 v &= \beta_2 v + (1 - \beta_2) (\nabla L)^2 \\\
 \hat{m} &= \frac{m}{1 - \beta_1^t} \\\
 \hat{v} &= \frac{v}{1 - \beta_2^t} \\\
 w' &= w - \eta \frac{\hat{m}}{\sqrt{\hat{v}} + \epsilon}
-\end{align*}
+\end{aligned}
 $$
 
 $\epsilon = 10^{-8}$
