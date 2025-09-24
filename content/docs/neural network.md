@@ -92,16 +92,18 @@ $\alpha$ is exponential decay factor \[0, 1\].
 
 $$
 \begin{align*}
-m &= \beta_1 m + (1 - \beta_1) \nabla L \\
-v &= \beta_2 v + (1 - \beta_2) (\nabla L)^2 \\
-\hat{m} &= \frac{m}{1 - \beta_1^t} \\
-\hat{v} &= \frac{v}{1 - \beta_2^t} \\
+m &= \beta_1 m + (1 - \beta_1) \nabla L \\\
+v &= \beta_2 v + (1 - \beta_2) (\nabla L)^2 \\\
+\hat{m} &= \frac{m}{1 - \beta_1^t} \\\
+\hat{v} &= \frac{v}{1 - \beta_2^t} \\\
 w' &= w - \eta \frac{\hat{m}}{\sqrt{\hat{v}} + \epsilon}
 \end{align*}
 $$
 
 $\epsilon = 10^{-8}$
+
 $\beta_1 = 0.9$
+
 $\beta_2 = 0.999$
 
 Adam stores the momentum for each parameter separately using update equations that consist of exponentially weighted moving averages for both the gradients and the squared gradients.
